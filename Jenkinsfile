@@ -94,7 +94,7 @@ pipeline {
         }
          stage('Prod Deploy') {
             when {
-                branch 'origin/master'
+                environment name: 'USER', value: 'KLKREDDY'
             }
             steps{
                 echo "deploying to Prod"
