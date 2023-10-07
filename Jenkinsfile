@@ -42,7 +42,7 @@ pipeline {
                // error 'this is failure'
             }
         }
-        stage('Example') {
+        stage('Access') {
             environment { 
                 AN_ACCESS_KEY = credentials('ssh-auth') 
             }
@@ -50,6 +50,18 @@ pipeline {
                 sh 'printenv'
             }
         }
+        stage('Params') {
+            steps {
+                echo "Hello ${params.PERSON}"
+
+                echo "Biography: ${params.BIOGRAPHY}"
+
+                echo "Toggle: ${params.TOGGLE}"
+
+                echo "Choice: ${params.CHOICE}"
+
+                echo "Password: ${params.PASSWORD}"
+            }
     }
     
     post { 
