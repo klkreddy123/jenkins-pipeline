@@ -1,7 +1,7 @@
 pipeline {
     agent { node { label 'AGENT-1' } } 
         triggers {
-        cron('* * * * *')
+        cron('0 * * * *')
         }
     environment { 
         USER = 'KLKREDDY'
