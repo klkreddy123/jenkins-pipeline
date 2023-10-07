@@ -11,6 +11,7 @@ pipeline {
                     ls -ltr
                     pwd
                 '''
+                echo "Hllo from github push webhook event"
             }
         }
         stage('Test') {
