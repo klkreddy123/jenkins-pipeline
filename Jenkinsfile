@@ -92,6 +92,13 @@ pipeline {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
         }
+         stage('Prod Deploy') {
+            when {
+                branch 'master'
+            }
+            steps{
+                echo "deploying to Prod"
+            }
         stage('Parallel Stage') {
             parallel {
                 stage('Branch A') {
