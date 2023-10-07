@@ -32,7 +32,16 @@ pipeline {
                // error 'this is failure'
             }
         }
+        stage('Example') {
+            environment { 
+                AN_ACCESS_KEY = credentials('ssh-auth') 
+            }
+            steps {
+                sh 'printenv'
+            }
+        }
     }
+    
     post { 
         
         always { 
